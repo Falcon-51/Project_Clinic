@@ -8,13 +8,13 @@
 Menu::Menu()
 {
 	ptrClientList = new ClientList;
-	
+	ptrExpensesRecord = new ExpensesRecord;
 }
 //---------------------------------------------------------
 Menu::~Menu()
 {
 	delete ptrClientList;
-	
+	delete ptrExpensesRecord;
 }
 //---------------------------------------------------------
 void Menu::interact()
@@ -25,10 +25,10 @@ void Menu::interact()
 			<< " для вывода отчета 'd', \n"
 			<< " для выхода 'q': \n";
 		ch = getaChar();
+		system("cls");
 		if (ch == 'i') // ввод данных
 		{
-			cout << " нажмите для добавления жильца 't', \n"
-				<< " для записи арендной платы 'r', \n"
+			cout << " нажмите для оформления клиента 't', \n"
 				<< " для записи расходов 'e': \n";
 			ch = getaChar();
 			switch (ch)
@@ -39,6 +39,12 @@ void Menu::interact()
 				new ClientInputScreen(ptrClientList);
 				ptrClientInputScreen->setClient();
 				delete ptrClientInputScreen;
+				break;
+
+			case 'e': ptrExpensesInputScreen =
+				new ExpensesInputScreen(ptrExpensesRecord);
+				ptrExpensesInputScreen->setExpense();
+				delete ptrExpensesInputScreen;
 				break;
 
 			default: cout << "Неизвестная функция\n";
@@ -54,7 +60,7 @@ void Menu::interact()
 			{
 			case 't': ptrClientList->showClientList();
 				break;
-			
+
 			} 
 		} // конец elseif
 		else if (ch == 'q')

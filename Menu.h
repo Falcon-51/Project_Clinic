@@ -3,6 +3,8 @@
 #include "Clinic.h"
 #include "Client.h"
 #include "ClientInputScreen.h"
+#include "ExpensesRecord.h"
+#include "ExpensesInputScreen.h"
 
 /////////////////Класс UserInterface//////////////////////
 //Главный класс для запуска приложения:
@@ -12,7 +14,9 @@ class Menu
 private:
 	ClientList* ptrClientList;
 	ClientInputScreen* ptrClientInputScreen;
-	
+	ExpensesRecord* ptrExpensesRecord;
+	ExpensesInputScreen* ptrExpensesInputScreen;
+
 	char ch;
 
 public:
