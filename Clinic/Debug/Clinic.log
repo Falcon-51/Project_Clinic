@@ -1,7 +1,0 @@
-﻿  Client.cpp
-  Clinic.cpp
-  ClinicMain.cpp
-  ClientList.cpp
-F:\Study\Code C++\Clinic\ClientList.cpp(56,4): warning C4834: отмена возвращаемого значения функции с атрибутом "nodiscard"
-  Создание кода...
-  Clinic.vcxproj -> F:\Study\Code C++\Clinic\Debug\Clinic.exe
