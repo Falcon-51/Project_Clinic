@@ -1,20 +1,19 @@
+#pragma once
 #include "Clinic.h"
 #include "Client.h"
 
-///////////////////класс ClientList////////////////////////
-//класс TenantList — список всех жильцов.
-//Он содержит множество указателей на класс Tenant
-// и оперирует ими при выводе
+// Класс ClientList — база данных клиентов.
+
 class ClientList
 {
 private:
-	// установить указатели на жильцов
-	list <Client*> setPtrsClients; // указатели на класс жильцов
-	list <Client*>::iterator iter; //итератор
+	list <Client*> clientPtrList; // указатели на класс Client
+	list <Client*>::iterator iter; // итератор
 
 public:
-	~ClientList(); // деструктор (удаление жильцов)
+
+	~ClientList(); // деструктор
 	void insertClient(Client*); // добавить клиента в список
-	int getInsNo(string); // возвращает номер апартаментов
-	void display(); // вывод списка жильцов
+	int getNumbByName(string); // возвращает номер страхования по имени клиента
+	void showClientList(); // вывод таблицы 
 };

@@ -3,57 +3,104 @@
 #include "ClientList.h"
 
 
-//---------------------------------------------------------
-////////////////методы класса ClientList///////////////////
-ClientList::~ClientList() // деструктор
+// Методы класса ClientList
+
+ClientList::~ClientList()
 {
-	while (!setPtrsClients.empty()) // удаление всех клиентов, 
-	{ // удаление указателей из контейнера
-		iter = setPtrsClients.begin();
+	while (!clientPtrList.empty())
+	{
+		iter = clientPtrList.begin();
 		delete* iter;
 
-		setPtrsClients.erase(iter);
+		clientPtrList.erase(iter);
 	}
 }
 
-//---------------------------------------------------------
-void ClientList::insertClient(Client* ptrT)
+void ClientList::insertClient(Client* clPtr)
 {
-	setPtrsClients.push_back(ptrT); // вставка нового жильца в список
+	clientPtrList.push_back(clPtr);
 }
 
-//---------------------------------------------------------
-int ClientList::getInsNo(string clName) // получить номер страховки по имени жильца
+int ClientList::getNumbByName(string clName)
 {
 	int insNo;
-	iter = setPtrsClients.begin();
-	while (iter != setPtrsClients.end())
-	{ // поиск клиента в списке (достаем у каждого клиента номер страховки)
+	iter = clientPtrList.begin();
+	while (iter != clientPtrList.end())
+	{
 		insNo = (*iter)->getInsNumber();
-		if (clName == ((*iter)->getName())) // сравниваем по именам и
+		if (clName == ((*iter)->getName()))
 		{
-			// если получившаяся пара совпадает - значит,
-			//мы нашли запись об этом клиенте в списке, в этом случае
-			return insNo; // возвращаем номер его страховки
+			return insNo;
 		}
 		iter++;
 	}
-	return -1; // если нет - возвращаем -1
+	return -1;
 }
-//--------------------------------------------------------
 
-void ClientList::display() // вывод списка жильцов
+void ClientList::showClientList()
 {
-	cout << "\nApt#\tИмя клиента\n-------------------\n";
-	if (setPtrsClients.empty()) // если список клиентов пуст
-		cout << "***Нет клиентов***\n" << endl; // выводим запись, что он пуст)
+	system("cls");
+	cout << "|| Имя клиента          || Номер страховки || Тип страховки || Период (м) ||" << endl;
+	cout << "||----------------------||-----------------||---------------||------------||" << endl;
+	if (clientPtrList.empty()) 
+	{
+		cout << "||                                                                        ||" << endl;
+		cout << "||                              НЕТ КЛИЕНТОВ                              ||" << endl;
+		cout << "||________________________________________________________________________||" << endl;
+		system("pause");
+	}
 	else
 	{
-		iter = setPtrsClients.begin();
-		while (iter != setPtrsClients.end()) // распечатываем всех жильцов
+		iter = clientPtrList.begin();
+		while (iter != clientPtrList.end())
 		{
-			cout << (*iter)->getInsNumber() << " || " << (*iter)->getName() << endl;
+			cout.width(3);
+			cout << "|| ";
+
+			cout.width(20);
+			cout << (*iter)->getName();
+
+			cout.width(4);
+			cout << " || ";
+
+			cout.width(15);
+			cout << (*iter)->getInsNumber();
+
+			cout.width(4);
+			cout << " || ";
+
+			cout.width(13);
+			switch ((*iter)->getInsNumber())
+			{
+			case 1:
+				cout << "Standart";
+				break;
+
+			case 2:
+				cout << "Gold";
+				break;
+
+			case 3:
+				cout << "GoldPlus";
+				break;
+
+			default:
+				cout << "none";
+				break;
+			}
+
+			cout.width(4);
+			cout << " || ";
+
+			cout.width(10);
+			cout << (*iter)->getInsPeriod();
+
+			cout.width(3);
+			cout << " ||" << endl;
+
 			*iter++;
 		}
+		cout << "||______________________||_________________||_______________||____________||" << endl;
+		system("pause");
 	}
 }

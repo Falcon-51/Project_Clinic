@@ -143,11 +143,15 @@
     <ClCompile Include="Clinic.cpp" />
     <ClCompile Include="ClinicMain.cpp" />
     <ClCompile Include="ClientList.cpp" />
+    <ClCompile Include="NewInsurance.cpp" />
+    <ClCompile Include="StartProgram.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Client.h" />
     <ClInclude Include="Clinic.h" />
     <ClInclude Include="ClientList.h" />
+    <ClInclude Include="NewInsurance.h" />
+    <ClInclude Include="StartProgram.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,30 +1,34 @@
 #include <iostream>
 #include "Clinic.h"
 #include "Client.h"
+using namespace std;
 
+// Методы класса Client
 
-////////////////методы класса Tenant///////////////////////
-//в конструкторе задаём имя жильца и номер комнаты
-
-Client::Client(string n, int iNo, int iType, int iPrd) : name(n), insuranceNumber(iNo), insuranceType(iType), insurancePeriod(iPrd)
+Client::Client(string n, int iNo, int iType, int iPrd) : name(n), insNumber(iNo), insType(iType), insPeriod(iPrd)
 {
-	/* тут пусто */
 }
 
-//---------------------------------------------------------
-Client::~Client() // деструктор
+Client::~Client()
 {
-	/* тут тоже пусто */
 }
 
-//---------------------------------------------------------
-int Client::getInsNumber() //геттер возвращает номер комнаты жильца
-{
-	return insuranceNumber;
-}
-
-//--------------------------------------------------------
-string Client::getName() //геттер возвращает имя жильца
+string Client::getName()
 {
 	return name;
+}
+
+int Client::getInsNumber()
+{
+	return insNumber;
+}
+
+int Client::getInsType()
+{
+	return insType;
+}
+
+int Client::getInsPeriod()
+{
+	return insPeriod;
 }

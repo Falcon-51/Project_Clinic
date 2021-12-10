@@ -1,5 +1,6 @@
 //Clinic.h
 //заголовочный файл содержит объ€влени€ классов и т.п.
+#pragma once
 #include <iostream>
 #include <vector>
 #include <list>

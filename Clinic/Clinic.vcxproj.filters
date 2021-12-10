@@ -22,6 +22,12 @@
     <Filter Include="Исходные файлы\ClientList">
       <UniqueIdentifier>{4d3126f9-cafd-4d57-9ed4-c0dd444879cb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\NewInsurance">
+      <UniqueIdentifier>{a4d23b22-1c68-4ed4-9bac-e918c15ebe01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\StartProgram">
+      <UniqueIdentifier>{1d3824bd-d891-423a-9e93-f5e0616bc627}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Client.cpp">
@@ -36,6 +42,12 @@
     <ClCompile Include="Clinic.cpp">
       <Filter>Исходные файлы\ClinicMain</Filter>
     </ClCompile>
+    <ClCompile Include="NewInsurance.cpp">
+      <Filter>Исходные файлы\NewInsurance</Filter>
+    </ClCompile>
+    <ClCompile Include="StartProgram.cpp">
+      <Filter>Исходные файлы\StartProgram</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Client.h">
@@ -46,6 +58,12 @@
     </ClInclude>
     <ClInclude Include="Clinic.h">
       <Filter>Исходные файлы\ClinicMain</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInsurance.h">
+      <Filter>Исходные файлы\NewInsurance</Filter>
+    </ClInclude>
+    <ClInclude Include="StartProgram.h">
+      <Filter>Исходные файлы\StartProgram</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
