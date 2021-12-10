@@ -1,5 +1,4 @@
-//Clinic.h
-//заголовочный файл содержит объ€влени€ классов и т.п.
+#pragma once
 #include <iostream>
 #include <vector>
 #include <list>
@@ -11,6 +10,5 @@ using namespace std;
 #define	goldPay = 1000;
 #define	goldPayPlus = 1000;
 
-//////////////////// глобальные методы //////////////////////
 void getaLine(string& inStr); // получение строки текста
 char getaChar(); // получение символа

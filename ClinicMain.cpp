@@ -1,10 +1,16 @@
-﻿// lordApp.cpp
-#include "Clinic.h"
+﻿#include "Clinic.h"
 #include "Client.h"
+#include "ClientList.h"
+#include "ClientInputScreen.h"
+#include "Menu.h"
+
+using namespace std;
+
 int main()
 {
-	//Функция setlocale() задаёт локализацию программы.
 	setlocale(0, "rus");
+	Menu menu;
+	menu.interact();
+
 	return 0;
 }
-////////////////////конец файла lordApp.cpp////////////////
