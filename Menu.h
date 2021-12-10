@@ -6,9 +6,6 @@
 #include "ExpensesRecord.h"
 #include "ExpensesInputScreen.h"
 
-/////////////////Класс UserInterface//////////////////////
-//Главный класс для запуска приложения:
-//этот класс определяет взаимодействие юзера с программой.
 class Menu
 {
 private:
@@ -23,4 +20,4 @@ public:
 	Menu();
 	~Menu();
 	void interact();
-}; // конец класса userInterfac
+};

@@ -3,70 +3,62 @@
 #include "ClientInputScreen.h"
 #include "ClientList.h"
 #include "Menu.h"
-//---------------------------------------------------------
-////////////////методы класса userInterface//////////////
+
 Menu::Menu()
 {
 	ptrClientList = new ClientList;
 	ptrExpensesRecord = new ExpensesRecord;
 }
-//---------------------------------------------------------
+
 Menu::~Menu()
 {
 	delete ptrClientList;
 	delete ptrExpensesRecord;
 }
-//---------------------------------------------------------
+
 void Menu::interact()
 {
 	while (true)
 	{
-		cout << "Для ввода данных нажмите 'i', \n"
-			<< " для вывода отчета 'd', \n"
-			<< " для выхода 'q': \n";
+		system("cls");
+		cout << "   Меню" << endl << endl;
+		cout << "+q) Страхование нового клиента" << endl;
+		cout << " w) Продление страховки" << endl;
+		cout << "+e) Вывести список клиентов" << endl << endl;
+
+		cout << " a) Запись клиента к врачу" << endl;
+		cout << " s) Вывести записи к врачам" << endl << endl;
+
+		cout << "+d) Ввести расходы" << endl;
+		cout << "+z) Вывести расходы" << endl;
+		cout << " x) Вывести доходы" << endl;
+		cout << " c) Вывести годовой отчёт" << endl << endl;
+		cout << "+i) EXIT" << endl;
+
 		ch = getaChar();
 		system("cls");
-		if (ch == 'i') // ввод данных
-		{
-			cout << " нажмите для оформления клиента 't', \n"
-				<< " для записи расходов 'e': \n";
-			ch = getaChar();
-			switch (ch)
-			{
-				//экраны ввода существуют только во время их
-				//использования
-			case 't': ptrClientInputScreen =
-				new ClientInputScreen(ptrClientList);
-				ptrClientInputScreen->setClient();
-				delete ptrClientInputScreen;
-				break;
-
-			case 'e': ptrExpensesInputScreen =
-				new ExpensesInputScreen(ptrExpensesRecord);
-				ptrExpensesInputScreen->setExpense();
-				delete ptrExpensesInputScreen;
-				break;
-
-			default: cout << "Неизвестная функция\n";
-				break;
-			} // конец секции switch
-		} // конец условия if
-		else if (ch == 'd') // вывод данных
-		{
-			cout << "Нажмите для вывода жильцов 't', \n";
+		
 			
-			ch = getaChar();
-			switch (ch)
-			{
-			case 't': ptrClientList->showClientList();
-				break;
+		switch (ch)
+		{
+		case 'q': ptrClientInputScreen =
+			new ClientInputScreen(ptrClientList);
+			ptrClientInputScreen->setClient();
+			delete ptrClientInputScreen;
+			break;
 
-			} 
-		} // конец elseif
-		else if (ch == 'q')
-			return; // выход
-		else
-			cout << "Неизвестная функция. Нажимайте только 'i', 'd' или 'q'\n";
-	} // конец while
-} // конец interact()
-//////////////////к
+		case 'd': ptrExpensesInputScreen =
+			new ExpensesInputScreen(ptrExpensesRecord);
+			ptrExpensesInputScreen->setExpense();
+			delete ptrExpensesInputScreen;
+			break;
+		case 'e': ptrClientList->showClientList();
+			break;
+		case 'z': ptrExpensesRecord->showExpenses();
+			
+			break;
+		default: cout << "Неизвестная функция\n";
+			break;
+		}
+	}
+}

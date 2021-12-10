@@ -4,7 +4,6 @@
 using namespace std;
 
 // Методы класса Client
-
 Client::Client(string n, int iNo, int iType, int iPrd) : name(n), insNumber(iNo), insType(iType), insPeriod(iPrd)
 {
 }

@@ -2,12 +2,8 @@
 #include "Client.h"
 #include "ExpensesRecord.h"
 
-
-//---------------------------------------------------------
-//////////////////методы класса expensesRecord//////////////
- ExpensesRecord::~ExpensesRecord() // деструктор
-{ // удалить объекты expense
-// удалить указатели на вектор
+ExpensesRecord::~ExpensesRecord()
+{
 	while (!vectPtrsExpenses.empty())
 	{
 		iter = vectPtrsExpenses.begin();
@@ -16,41 +12,35 @@
 	}
 }
 
-
-
-//--------------------------------------------------------
 void ExpensesRecord::insertExpenses(Expenses* ptrExp)
 {
-
 	vectPtrsExpenses.push_back(ptrExp);
 }
 
-
-
-//---------------------------------------------------------
-void ExpensesRecord::showExpenses() // распечатываем все расходы
+void ExpensesRecord::showExpenses()
 {
 	cout << "\nДата\tПолучатель\tСумма\tКатегория\n"
 		<< "----------------------------------------\n" << endl;
-	if (vectPtrsExpenses.size() == 0) // В контейнере нет расходов
+	if (vectPtrsExpenses.size() == 0)
 		cout << "***Расходов нет***\n" << endl;
-	else
+	else 
 	{
+
 		iter = vectPtrsExpenses.begin();
 		while (iter != vectPtrsExpenses.end())
-		{ // распечатываем все расходы
+		{
 			cout << (*iter)->month << '/' << (*iter)->day << '\t' << (*iter)->provider<< '\t' << '\t';
 			cout << (*iter)->amount << '\t' << (*iter)->description << endl;
 			iter++;
 		}
 		cout << endl;
 	}
+	system("pause");
 }
-//--------------------------------------------------------
-// используется при составлении годового отчета
+
 float ExpensesRecord::showSummaryExpenses()
 {
-	float totalExpenses = 0; // Сумма по всем категориям расходов
+	float totalExpenses = 0;
 	if (vectPtrsExpenses.size() == 0)
 	{
 		cout << "\tВсе категории\t0\n";
@@ -59,9 +49,8 @@ float ExpensesRecord::showSummaryExpenses()
 	iter = vectPtrsExpenses.begin();
 	while (iter != vectPtrsExpenses.end())
 	{
-		//выводим на экран категории расходов
 		cout << '\t' << ((*iter)->provider) << '\t' << ((*iter)->amount) << endl;
-		totalExpenses += (*iter)->amount; //подсчитываем все расходы
+		totalExpenses += (*iter)->amount;
 		iter++;
 	}
 	return totalExpenses;

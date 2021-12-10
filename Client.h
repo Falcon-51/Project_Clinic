@@ -1,7 +1,6 @@
 #pragma once
 #include "Clinic.h"
 
-
 // Класс Client, хранит данные клиента
 class Client 
 {

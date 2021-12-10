@@ -2,20 +2,20 @@
 #include "Client.h"
 #include "ClientInputScreen.h"
 
-//---------------------------------------------------------
-///////////метод класса TenantInputScreen//////////////////
-void ClientInputScreen::setClient() // добавить данные о жильце
+void ClientInputScreen::setClient()
 {
-	cout << "Введите имя клиента (Дядя Федор): " << endl;
+	system("cls");
+	cout << "Оформление страховки: " << endl;
+	cout << "\nИмя клиента:  ";
 	getaLine(cName);
-	cout << "Введите номер страховки (101021): " << endl;
+	cout << "\nНомер страхования:  " << endl;
 	cin >> insNumber;
-	cout << "Введите тип страховки: " << endl;
+	cout << "\nТип страхования:  " << endl;
 	cin >> insType;
-	cout << "Введите период страховки: " << endl;
+	cout << "\nОплаченный период:  " << endl;
 	cin >> insPeriod;
 	cin.ignore(80, '\n');
 
-	Client* ptrClient = new Client(cName, insNumber, insType, insPeriod); // создать жильца
-	ptrClientList->insertClient(ptrClient); // занести в список жильцов
+	Client* ptrClient = new Client(cName, insNumber, insType, insPeriod);
+	ptrClientList->insertClient(ptrClient);
 }

@@ -2,9 +2,6 @@
 #include "Clinic.h"
 #include "ClientList.h"
 
-
-// Методы класса ClientList
-
 ClientList::~ClientList()
 {
 	while (!clientPtrList.empty())

@@ -3,9 +3,7 @@
 #include "Clinic.h"
 #include "Client.h"
 #include "ClientList.h"
-////////////////класс TenantInputScreen////////////////////
-//класс TenantInputScreen. Это класс, отвечающий за отображение «экрана»,
-//куда пользователь может ввести данные о новом жильце:
+
 class ClientInputScreen
 {
 private:
@@ -18,7 +16,6 @@ private:
 public:
 	ClientInputScreen(ClientList* ptrTL) : ptrClientList(ptrTL)
 	{
-		/* тут пусто */
 	}
-	void setClient(); // добавить данные о жильце
+	void setClient();
 };

@@ -1,14 +1,12 @@
-// конструктор
 #include "Clinic.h"
 #include "Client.h"
 #include "ExpensesInputScreen.h"
 #include "ExpensesRecord.h"
-// конструктор
+
 ExpensesInputScreen::ExpensesInputScreen(ExpensesRecord* per) : ptrExpensesRecord(per)
 {
-	/*пусто*/
 }
-//------------------------------------------------------
+
 void ExpensesInputScreen::setExpense()
 {
 	int month, day;
@@ -27,8 +25,6 @@ void ExpensesInputScreen::setExpense()
 	cout << "Введите сумму (39.95): ";
 	cin >> amount;
 	cin.ignore(80, '\n');
-	// создаем новый расход
 	Expenses* ptrExpenses = new Expenses(month, day, provider, description, amount);
-	// вставляем расход в список всех расходов
 	ptrExpensesRecord->insertExpenses(ptrExpenses);
 }

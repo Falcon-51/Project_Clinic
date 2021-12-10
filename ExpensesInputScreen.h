@@ -3,12 +3,11 @@
 #include "Client.h"
 #include "Expenses.h"
 #include "ExpensesRecord.h"
-////////////////класс ExpenseInputScreen///////////////////
-//Класс для ввода расходов
+
 class ExpensesInputScreen
 {
 private:
-	ExpensesRecord* ptrExpensesRecord; // запись о расходах
+	ExpensesRecord* ptrExpensesRecord;
 
 public:
 	ExpensesInputScreen(ExpensesRecord*);
