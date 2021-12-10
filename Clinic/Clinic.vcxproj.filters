@@ -22,11 +22,11 @@
     <Filter Include="Исходные файлы\ClientList">
       <UniqueIdentifier>{4d3126f9-cafd-4d57-9ed4-c0dd444879cb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Исходные файлы\NewInsurance">
-      <UniqueIdentifier>{a4d23b22-1c68-4ed4-9bac-e918c15ebe01}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Исходные файлы\StartProgram">
-      <UniqueIdentifier>{1d3824bd-d891-423a-9e93-f5e0616bc627}</UniqueIdentifier>
+      <UniqueIdentifier>{437a26ad-0db4-4225-a537-285fde319297}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Menu">
+      <UniqueIdentifier>{10bc1b78-6fbc-457e-8d22-e8ad2af5ac74}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -42,11 +42,11 @@
     <ClCompile Include="Clinic.cpp">
       <Filter>Исходные файлы\ClinicMain</Filter>
     </ClCompile>
-    <ClCompile Include="NewInsurance.cpp">
-      <Filter>Исходные файлы\NewInsurance</Filter>
-    </ClCompile>
-    <ClCompile Include="StartProgram.cpp">
+    <ClCompile Include="ClientInputScreen.cpp">
       <Filter>Исходные файлы\StartProgram</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Исходные файлы\Menu</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -59,11 +59,11 @@
     <ClInclude Include="Clinic.h">
       <Filter>Исходные файлы\ClinicMain</Filter>
     </ClInclude>
-    <ClInclude Include="NewInsurance.h">
-      <Filter>Исходные файлы\NewInsurance</Filter>
-    </ClInclude>
-    <ClInclude Include="StartProgram.h">
+    <ClInclude Include="ClientInputScreen.h">
       <Filter>Исходные файлы\StartProgram</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>Исходные файлы\Menu</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

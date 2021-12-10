@@ -1,1 +1,2 @@
 C:\Users\user\Desktop\Project_Clinic-SLN\Clinic\x64\Debug\Clinic.exe
+F:\Study\Code C++\Clinic\x64\Debug\Clinic.exe

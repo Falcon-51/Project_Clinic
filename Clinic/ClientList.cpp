@@ -70,24 +70,24 @@ void ClientList::showClientList()
 			cout << " || ";
 
 			cout.width(13);
-			switch ((*iter)->getInsNumber())
-			{
-			case 1:
-				cout << "Standart";
-				break;
+			switch ((*iter)->getInsType())
+				{
+				case 1:
+					cout << "Standart";
+					break;
 
-			case 2:
-				cout << "Gold";
-				break;
+				case 2:
+					cout << "Gold";
+					break;
 
-			case 3:
-				cout << "GoldPlus";
-				break;
+				case 3:
+					cout << "GoldPlus";
+					break;
 
-			default:
-				cout << "none";
-				break;
-			}
+				default:
+					cout << "none";
+					break;
+				}
 
 			cout.width(4);
 			cout << " || ";
