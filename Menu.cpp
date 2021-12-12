@@ -8,12 +8,14 @@ Menu::Menu()
 {
 	ptrClientList = new ClientList;
 	ptrExpensesRecord = new ExpensesRecord;
+	ptrSeeDoctorRecord = new SeeDoctorRecord;
 }
 
 Menu::~Menu()
 {
 	delete ptrClientList;
 	delete ptrExpensesRecord;
+	delete ptrSeeDoctorRecord;
 }
 
 void Menu::interact()
@@ -55,8 +57,21 @@ void Menu::interact()
 		case 'e': ptrClientList->showClientList();
 			break;
 		case 'z': ptrExpensesRecord->showExpenses();
-			
 			break;
+
+		case 'a': ptrSeeDoctorInputScreen =
+			new SeeDoctorInputScreen(ptrSeeDoctorRecord);
+			ptrSeeDoctorInputScreen->setSeeDoctor();
+			delete ptrSeeDoctorInputScreen;
+			break;
+
+		case 's': ptrSeeDoctorRecord->showSeeDoctor();
+			break;
+		
+		case 'i':
+			return;
+
+
 		default: cout << "Неизвестная функция\n";
 			break;
 		}

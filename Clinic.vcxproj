@@ -147,6 +147,9 @@
     <ClCompile Include="ExpensesInputScreen.cpp" />
     <ClCompile Include="ExpensesRecord.cpp" />
     <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="SeeDoctor.cpp" />
+    <ClCompile Include="SeeDoctorInputScreen.cpp" />
+    <ClCompile Include="SeeDoctorRecord.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Client.h" />
@@ -157,6 +160,9 @@
     <ClInclude Include="ExpensesInputScreen.h" />
     <ClInclude Include="ExpensesRecord.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="SeeDoctor.h" />
+    <ClInclude Include="SeeDoctorInputScreen.h" />
+    <ClInclude Include="SeeDoctorRecord.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

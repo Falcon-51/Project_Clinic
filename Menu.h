@@ -5,6 +5,8 @@
 #include "ClientInputScreen.h"
 #include "ExpensesRecord.h"
 #include "ExpensesInputScreen.h"
+#include "SeeDoctorRecord.h"
+#include "SeeDoctorInputScreen.h"
 
 class Menu
 {
@@ -13,6 +15,8 @@ private:
 	ClientInputScreen* ptrClientInputScreen;
 	ExpensesRecord* ptrExpensesRecord;
 	ExpensesInputScreen* ptrExpensesInputScreen;
+	SeeDoctorRecord* ptrSeeDoctorRecord;
+	SeeDoctorInputScreen* ptrSeeDoctorInputScreen;
 
 	char ch;
 

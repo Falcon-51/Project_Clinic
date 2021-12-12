@@ -37,6 +37,15 @@
     <Filter Include="Исходные файлы\ExpensesInputScreen">
       <UniqueIdentifier>{c2610ab1-82a7-4d72-bc37-6651b2011131}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\SeeDoctorInputScreen">
+      <UniqueIdentifier>{31dfd740-3e1c-473e-8ba3-116d47c5ebb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\SeeDoctorRecord">
+      <UniqueIdentifier>{5e8bbc46-97e8-48ab-9b0d-c556a767f081}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\SeeDoctor">
+      <UniqueIdentifier>{7f86f63e-5007-4429-9479-c90ca0502c6d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Client.cpp">
@@ -63,6 +72,15 @@
     <ClCompile Include="ExpensesInputScreen.cpp">
       <Filter>Исходные файлы\ExpensesInputScreen</Filter>
     </ClCompile>
+    <ClCompile Include="SeeDoctorRecord.cpp">
+      <Filter>Исходные файлы\SeeDoctorRecord</Filter>
+    </ClCompile>
+    <ClCompile Include="SeeDoctorInputScreen.cpp">
+      <Filter>Исходные файлы\SeeDoctorInputScreen</Filter>
+    </ClCompile>
+    <ClCompile Include="SeeDoctor.cpp">
+      <Filter>Исходные файлы\SeeDoctor</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Client.h">
@@ -88,6 +106,15 @@
     </ClInclude>
     <ClInclude Include="ExpensesInputScreen.h">
       <Filter>Исходные файлы\ExpensesInputScreen</Filter>
+    </ClInclude>
+    <ClInclude Include="SeeDoctor.h">
+      <Filter>Исходные файлы\SeeDoctor</Filter>
+    </ClInclude>
+    <ClInclude Include="SeeDoctorRecord.h">
+      <Filter>Исходные файлы\SeeDoctorRecord</Filter>
+    </ClInclude>
+    <ClInclude Include="SeeDoctorInputScreen.h">
+      <Filter>Исходные файлы\SeeDoctorInputScreen</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
