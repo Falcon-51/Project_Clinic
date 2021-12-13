@@ -34,6 +34,60 @@ int ClientList::getNumbByName(string clName)
 	return -1;
 }
 
+int ClientList::getTypeByNumb(int insNo)
+{
+	int insType;
+	iter = clientPtrList.begin();
+	while (iter != clientPtrList.end())
+	{
+		if (insNo == ((*iter)->getInsNumber()))
+		{
+			return (*iter)->getInsType();
+		}
+		iter++;
+	}
+}
+void ClientList::changeTypeByNumb(int insNo, int newType)
+{
+
+}
+
+void ClientList::prolongPeriodByNumb(int insNo, int newPeriod)
+{
+	iter = clientPtrList.begin();
+	while (iter != clientPtrList.end())
+	{
+		if (insNo == ((*iter)->getInsNumber()))
+		{
+			newPeriod = newPeriod + (*iter)->getInsPeriod();
+			(*iter)->changeInsPeriod(newPeriod);
+		}
+		iter++;
+	}
+}
+
+int ClientList::checkNumb(int insNo) 
+{
+	int check = -1;
+	if (clientPtrList.empty())
+	{
+		return 0;
+	}
+	else
+	{
+		iter = clientPtrList.begin();
+		while (iter != clientPtrList.end())
+		{
+			if ((*iter)->getInsNumber() == insNo) {
+				check = 1;
+			}
+			iter++;
+		}
+
+		return check;
+	}
+}
+
 void ClientList::showClientList()
 {
 	system("cls");
@@ -98,6 +152,7 @@ void ClientList::showClientList()
 			*iter++;
 		}
 		cout << "||______________________||_________________||_______________||____________||" << endl;
+		cout <<  endl;
 		system("pause");
 	}
 }

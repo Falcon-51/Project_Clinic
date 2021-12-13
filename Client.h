@@ -18,4 +18,5 @@ public:
 	int getInsNumber(); //возвращает номер страховки
 	int getInsType(); // возвращает тип страховки
 	int getInsPeriod(); // возвращает период страхования
+	void changeInsPeriod(int newPeriod); // редактирует поле периода страхования
 };

@@ -1,4 +1,5 @@
 #pragma once
+
 #include "Clinic.h"
 #include "Client.h"
 
@@ -13,5 +14,9 @@ public:
 	~ClientList();
 	void insertClient(Client*);
 	int getNumbByName(string); 
+	int getTypeByNumb(int insNo);
+	int checkNumb(int insNo);
+	void changeTypeByNumb(int insNo, int newType);
+	void prolongPeriodByNumb(int insNo, int newPeriod);
 	void showClientList(); 
 };

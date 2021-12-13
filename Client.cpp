@@ -31,3 +31,8 @@ int Client::getInsPeriod()
 {
 	return insPeriod;
 }
+
+void Client::changeInsPeriod(int newPeriod)
+{
+	insPeriod = newPeriod;
+}

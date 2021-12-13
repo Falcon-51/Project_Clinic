@@ -6,19 +6,17 @@
 #include "Income.h"
 #include "IncomeRecord.h"
 
-class ClientInputScreen
+class ProlongInsScreen
 {
 private:
 	ClientList* ptrClientList;
 	IncomeRecord* ptrIncomeRecord;
-	string cName;
 	int insNumber;
-	int insType;
 	int insPeriod;
 
 public:
-	ClientInputScreen(ClientList* ptrTL, IncomeRecord* ptrIR) : ptrClientList(ptrTL), ptrIncomeRecord(ptrIR)
+	ProlongInsScreen(ClientList* ptrTL, IncomeRecord* ptrIR) : ptrClientList(ptrTL), ptrIncomeRecord(ptrIR)
 	{
 	}
-	void setClient();
+	void ProlongIns();
 };
