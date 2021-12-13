@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AnnualReportScreen.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="Clinic.cpp" />
     <ClCompile Include="ClinicMain.cpp" />
@@ -146,9 +147,15 @@
     <ClCompile Include="ClientInputScreen.cpp" />
     <ClCompile Include="ExpensesInputScreen.cpp" />
     <ClCompile Include="ExpensesRecord.cpp" />
+    <ClCompile Include="IncomeRecord.cpp" />
     <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="ProlongInsScreen.cpp" />
+    <ClCompile Include="seeDoctor.cpp" />
+    <ClCompile Include="seeDoctorInputScreen.cpp" />
+    <ClCompile Include="seeDoctorRecord.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AnnualReportScreen.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="Clinic.h" />
     <ClInclude Include="ClientList.h" />
@@ -156,7 +163,13 @@
     <ClInclude Include="Expenses.h" />
     <ClInclude Include="ExpensesInputScreen.h" />
     <ClInclude Include="ExpensesRecord.h" />
+    <ClInclude Include="Income.h" />
+    <ClInclude Include="IncomeRecord.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="ProlongInsScreen.h" />
+    <ClInclude Include="seeDoctor.h" />
+    <ClInclude Include="seeDoctorInputScreen.h" />
+    <ClInclude Include="seeDoctorRecord.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

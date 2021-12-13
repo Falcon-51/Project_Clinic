@@ -37,6 +37,27 @@
     <Filter Include="Исходные файлы\ExpensesInputScreen">
       <UniqueIdentifier>{c2610ab1-82a7-4d72-bc37-6651b2011131}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\SeeDoctor">
+      <UniqueIdentifier>{f4663c6d-9422-4bb3-935b-2101dd0e2486}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\SeeDoctorRecord">
+      <UniqueIdentifier>{32d7d89b-af79-49e5-84cb-c033ba478644}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\SeeDoctorInputScreen">
+      <UniqueIdentifier>{dc9fb745-c649-46b2-808a-d55de788dab5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\ProlongInsScreen">
+      <UniqueIdentifier>{bb23dc6c-fcf3-4918-86f8-890eda9a0f64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\IncomeRecord">
+      <UniqueIdentifier>{97d3e44a-df1a-4220-a3bb-6914a42a28d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Income">
+      <UniqueIdentifier>{079ea2ec-ad9f-4b49-9bed-4282530ed58c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\AnnualReportScreen">
+      <UniqueIdentifier>{e469a2b7-9c49-4d7c-a290-63ed7ddaeafe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Client.cpp">
@@ -63,13 +84,28 @@
     <ClCompile Include="ExpensesInputScreen.cpp">
       <Filter>Исходные файлы\ExpensesInputScreen</Filter>
     </ClCompile>
+    <ClCompile Include="seeDoctorInputScreen.cpp">
+      <Filter>Исходные файлы\SeeDoctorInputScreen</Filter>
+    </ClCompile>
+    <ClCompile Include="seeDoctorRecord.cpp">
+      <Filter>Исходные файлы\SeeDoctorRecord</Filter>
+    </ClCompile>
+    <ClCompile Include="seeDoctor.cpp">
+      <Filter>Исходные файлы\SeeDoctor</Filter>
+    </ClCompile>
+    <ClCompile Include="ProlongInsScreen.cpp">
+      <Filter>Исходные файлы\ProlongInsScreen</Filter>
+    </ClCompile>
+    <ClCompile Include="IncomeRecord.cpp">
+      <Filter>Исходные файлы\IncomeRecord</Filter>
+    </ClCompile>
+    <ClCompile Include="AnnualReportScreen.cpp">
+      <Filter>Исходные файлы\AnnualReportScreen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Client.h">
       <Filter>Исходные файлы\Client</Filter>
-    </ClInclude>
-    <ClInclude Include="ClientList.h">
-      <Filter>Исходные файлы\ClientList</Filter>
     </ClInclude>
     <ClInclude Include="Clinic.h">
       <Filter>Исходные файлы\ClinicMain</Filter>
@@ -88,6 +124,30 @@
     </ClInclude>
     <ClInclude Include="ExpensesInputScreen.h">
       <Filter>Исходные файлы\ExpensesInputScreen</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientList.h">
+      <Filter>Исходные файлы\ClientList</Filter>
+    </ClInclude>
+    <ClInclude Include="seeDoctorInputScreen.h">
+      <Filter>Исходные файлы\SeeDoctorInputScreen</Filter>
+    </ClInclude>
+    <ClInclude Include="seeDoctorRecord.h">
+      <Filter>Исходные файлы\SeeDoctorRecord</Filter>
+    </ClInclude>
+    <ClInclude Include="seeDoctor.h">
+      <Filter>Исходные файлы\SeeDoctor</Filter>
+    </ClInclude>
+    <ClInclude Include="ProlongInsScreen.h">
+      <Filter>Исходные файлы\ProlongInsScreen</Filter>
+    </ClInclude>
+    <ClInclude Include="IncomeRecord.h">
+      <Filter>Исходные файлы\IncomeRecord</Filter>
+    </ClInclude>
+    <ClInclude Include="Income.h">
+      <Filter>Исходные файлы\Income</Filter>
+    </ClInclude>
+    <ClInclude Include="AnnualReportScreen.h">
+      <Filter>Исходные файлы\AnnualReportScreen</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
