@@ -12,19 +12,22 @@ void ExpensesInputScreen::setExpense()
 	int month, day;
 	string provider, description;
 	float amount;
-	cout << "¬ведите мес€ц (1-12): ";
-	cin >> month;
-	cin.ignore(80, '\n');
-	cout << "¬ведите день (1-31): ";
-	cin >> day;
-	cin.ignore(80, '\n');
-	cout << "¬ведите поставщика (ћед“орг и т.п.): ";
-	getaLine(provider);
-	cout << "¬ведите описание (Ѕинты и т.п.): ";
-	getaLine(description);
-	cout << "¬ведите сумму (39.95): ";
-	cin >> amount;
-	cin.ignore(80, '\n');
+
+	system("cls");
+	cout << "ѕоставщик (фирма): ";
+	provider = getaLine(18);
+	cout << "\nќписание: ";
+	description = getaLine(26);
+	cout << "\n—умма ($): ";
+	amount = getaNumb(1, 50000);
+	cout << "\nћес€ц (1-12): ";
+	month = getaNumb(1, 12);
+	cout << "\nƒень (1-31): ";
+	day = getaNumb(1, 31);
+
+	cin.clear();
+	while (cin.get() != '\n');
+
 	Expenses* ptrExpenses = new Expenses(month, day, provider, description, amount);
 	ptrExpensesRecord->insertExpenses(ptrExpenses);
 }

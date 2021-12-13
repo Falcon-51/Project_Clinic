@@ -1,29 +1,29 @@
 #include "Clinic.h"
 #include "Client.h"
-#include "ExpensesRecord.h"
+#include "IncomeRecord.h"
 
-ExpensesRecord::~ExpensesRecord()
+IncomeRecord::~IncomeRecord()
 {
-	while (!vectPtrsExpenses.empty())
+	while (!vectPtrsIncome.empty())
 	{
-		iter = vectPtrsExpenses.begin();
+		iter = vectPtrsIncome.begin();
 		delete* iter;
-		vectPtrsExpenses.erase(iter);
+		vectPtrsIncome.erase(iter);
 	}
 }
 
-void ExpensesRecord::insertExpenses(Expenses* ptrExp)
+void IncomeRecord::insertIncome(Income* ptrInc)
 {
-	vectPtrsExpenses.push_back(ptrExp);
+	vectPtrsIncome.push_back(ptrInc);
 }
 
-void ExpensesRecord::showExpenses()
+void IncomeRecord::showIncome()
 {
 	system("cls");
-	cout << "|| Дата  ||  Получатель        ||  Описание                  ||  Сумма    ||" << endl;
-	cout << "||_______||____________________||____________________________||___________||" << endl;
+	cout << "|| Дата  ||         Тип дохода          || Номер страхования ||  Сумма    ||" << endl;
+	cout << "||_______||_____________________________||___________________||___________||" << endl;
 
-	if (vectPtrsExpenses.size() == 0)
+	if (vectPtrsIncome.size() == 0)
 	{
 		cout << "||                                                                        ||" << endl;
 		cout << "||                              НЕТ ЗАПИСЕЙ                               ||" << endl;
@@ -31,8 +31,8 @@ void ExpensesRecord::showExpenses()
 	}
 	else
 	{
-		iter = vectPtrsExpenses.begin();
-		while (iter != vectPtrsExpenses.end())
+		iter = vectPtrsIncome.begin();
+		while (iter != vectPtrsIncome.end())
 		{
 			cout.width(3);
 			cout << "|| ";
@@ -46,7 +46,7 @@ void ExpensesRecord::showExpenses()
 				cout.width(2);
 				cout << (*iter)->day;
 			}
-			else 
+			else
 			{
 				cout.width(1);
 				cout << (*iter)->day << " ";
@@ -55,14 +55,21 @@ void ExpensesRecord::showExpenses()
 			cout.width(4);
 			cout << " || ";
 
-			cout.width(18);
-			cout << (*iter)->provider;
-
+			cout.width(27);
+			if ((*iter)->type == 1)
+			{
+				cout << "Оформление страховки";
+			}
+			else
+			{
+				cout << "Продление страховки";
+			}
+			
 			cout.width(4);
 			cout << " || ";
 
-			cout.width(26);
-			cout << (*iter)->description;
+			cout.width(17);
+			cout << (*iter)->insNumb;
 
 			cout.width(4);
 			cout << " || ";
@@ -75,18 +82,18 @@ void ExpensesRecord::showExpenses()
 
 			*iter++;
 		}
-		cout << "||_______||____________________||____________________________||___________||" << endl;
+		cout << "||_______||_____________________________||___________________||___________||" << endl;
 
 		cout.width(3);
 		cout << "|| ";
 
-		cout.width(17);
-		cout << "Итог по расходам:";
-		cout.width(53);
-		cout << summaryExpenses();
+		cout.width(16);
+		cout << "Итог по доходам:";
+		cout.width(54);
+		cout << summaryIncome();
 
 		cout.width(3);
-		cout << " ||" << endl;
+		cout<< " ||" << endl;
 
 		cout << "||________________________________________________________________________||" << endl;
 	}
@@ -94,15 +101,15 @@ void ExpensesRecord::showExpenses()
 	system("pause");
 }
 
-int ExpensesRecord::summaryExpenses()
+int IncomeRecord::summaryIncome()
 {
 	float totalExpenses = 0;
-	if (vectPtrsExpenses.size() == 0)
+	if (vectPtrsIncome.size() == 0)
 	{
 		return 0;
 	}
-	iter = vectPtrsExpenses.begin();
-	while (iter != vectPtrsExpenses.end())
+	iter = vectPtrsIncome.begin();
+	while (iter != vectPtrsIncome.end())
 	{
 		totalExpenses += (*iter)->amount;
 		iter++;
@@ -110,16 +117,16 @@ int ExpensesRecord::summaryExpenses()
 	return totalExpenses;
 }
 
-void ExpensesRecord::showExpensesReport() {
-	if (vectPtrsExpenses.size() == 0)
+void IncomeRecord::showIncomeReport() {
+	if (vectPtrsIncome.size() == 0)
 	{
-		cout << "||                        НЕТ РАСХОДОВ ЗА ГОД                             ||" << endl;
+		cout << "||                        НЕТ ДОХОДОВ ЗА ГОД                              ||" << endl;
 		cout << "||________________________________________________________________________||" << endl;
 	}
 	else
 	{
-		iter = vectPtrsExpenses.begin();
-		while (iter != vectPtrsExpenses.end())
+		iter = vectPtrsIncome.begin();
+		while (iter != vectPtrsIncome.end())
 		{
 			cout.width(3);
 			cout << "|| ";
@@ -143,13 +150,23 @@ void ExpensesRecord::showExpensesReport() {
 			cout << " || ";
 
 			cout.width(22);
-			cout << (*iter)->description;
+			if ((*iter)->type == 1)
+			{
+				cout << "Оформление страховки";
+			}
+			else
+			{
+				cout << "Продление страховки";
+			}
 
 			cout.width(4);
 			cout << " || ";
 
-			cout.width(22);
-			cout << (*iter)->provider;
+			cout.width(15);
+			cout << "Клиент:";
+
+			cout.width(7);
+			cout << (*iter)->insNumb;
 
 			cout.width(4);
 			cout << " || ";
@@ -167,10 +184,10 @@ void ExpensesRecord::showExpensesReport() {
 		cout.width(3);
 		cout << "|| ";
 
-		cout.width(17);
-		cout << "Итог по расходам:";
-		cout.width(53);
-		cout << summaryExpenses();
+		cout.width(16);
+		cout << "Итог по доходам:";
+		cout.width(54);
+		cout << summaryIncome();
 
 		cout.width(3);
 		cout << " ||" << endl;

@@ -17,55 +17,51 @@ void SeeDoctorRecord::insertSeeDoctor(SeeDoctor* ptrExp)
 	vectPtrSeeDoctor.push_back(ptrExp);
 }
 
-/*
-void SeeDoctorRecord::showService(int key)
-{
-	
-	switch (key)
-	{
-	case 1:
-		cout << "Ортопед";
-		break;
-
-	case 2:
-		cout << "Дерматолог";
-		break;
-
-	case 3:
-		cout << "Стоматолог";
-		break;
-
-	case 4:
-		cout << "Врач спортивной медицины";
-		break;
-
-	case 5:
-		cout << "Окулист";
-		break;
-
-	default:
-		cout << "none";
-		break;
-	} cout << '\t' << '\t';
-
-}*/
-
-
-
 void SeeDoctorRecord::showSeeDoctor()
 {
-	cout << "\nДата\tВрач\t\tУслуга\t\tНомер страховки\n"
-		<< "----------------------------------------------------\n" << endl;
-	if (vectPtrSeeDoctor.size() == 0)
-		cout << "***Записей нет***\n" << endl;
+	system("cls");
+	cout << "|| Дата  || Номер страховки || Врач                           || Услуга                         ||" << endl;
+	cout << "||_______||_________________||________________________________||________________________________||" << endl;
+	if (vectPtrSeeDoctor.size() == 0) 
+	{
+		cout << "||                                                                                              ||" << endl;
+		cout << "||                                          НЕТ ЗАПИСЕЙ                                         ||" << endl;
+		cout << "||______________________________________________________________________________________________||" << endl;
+	}
 	else
 	{
 
 		iter = vectPtrSeeDoctor.begin();
 		while (iter != vectPtrSeeDoctor.end())
 		{
-			cout << (*iter)->month << '/' << (*iter)->day << '\t';
-				
+			cout.width(3);
+			cout << "|| ";
+
+			cout.width(2);
+			cout << (*iter)->month;
+			cout << "/";
+
+			if ((*iter)->day > 9)
+			{
+				cout.width(2);
+				cout << (*iter)->day;
+			}
+			else
+			{
+				cout.width(1);
+				cout << (*iter)->day << " ";
+			}
+
+			cout.width(4);
+			cout << " || ";
+
+			cout.width(15);
+			cout << (*iter)->insNo;
+
+			cout.width(4);
+			cout << " || ";
+
+			cout.width(30);
 			switch ((*iter)->getDoctor())
 			{
 			case 1:
@@ -91,10 +87,12 @@ void SeeDoctorRecord::showSeeDoctor()
 			default:
 				cout << "none";
 				break;
-			} cout << '\t' << '\t'; 
+			}
 			
+			cout.width(4);
+			cout << " || ";
 
-
+			cout.width(30);
 			if((*iter)->category == 1)
 			switch ((*iter)->getService())
 			{
@@ -107,11 +105,11 @@ void SeeDoctorRecord::showSeeDoctor()
 					break;
 
 				case 3:
-					cout << "Изготовление стелек";
+					cout << "Профилактика и лечение грыж";
 					break;
 
 				case 4:
-					cout << "Профилактика и лечение грыж";
+					cout << "Изготовление стелек";
 					break;
 
 				default:
@@ -131,11 +129,11 @@ void SeeDoctorRecord::showSeeDoctor()
 					break;
 
 				case 3:
-					cout << "Чистка кожи";
+					cout << "Направление на анализы";
 					break;
 
 				case 4:
-					cout << "Направление на анализы";
+					cout << "Чистка кожи";
 					break;
 
 				case 5:
@@ -159,19 +157,19 @@ void SeeDoctorRecord::showSeeDoctor()
 					break;
 
 				case 3:
-					cout << "Установка брекет-системы";
+					cout << "Удаление зуба";
 					break;
 
 				case 4:
-					cout << "Установка виниров";
-					break;
-
-				case 5:
 					cout << "Установка имплантов";
 					break;
 
+				case 5:
+					cout << "Установка брекет-системы";
+					break;
+
 				case 6:
-					cout << "Удаление зуба";
+					cout << "Установка виниров";
 					break;
 
 				default:
@@ -195,11 +193,11 @@ void SeeDoctorRecord::showSeeDoctor()
 					break;
 
 				case 4:
-					cout << "Реабилитация";
+					cout << "Массаж/мануальные техники";
 					break;
 
 				case 5:
-					cout << "Массаж/мануальные техники";
+					cout << "Реабилитация";
 					break;
 
 				default:
@@ -219,11 +217,11 @@ void SeeDoctorRecord::showSeeDoctor()
 					break;
 
 				case 3:
-					cout << "Коррекция зрения";
+					cout << "Проверка зрения";
 					break;
 
 				case 4:
-					cout << "Проверка зрения";
+					cout << "Коррекция зрения";
 					break;
 
 				case 5:
@@ -235,12 +233,14 @@ void SeeDoctorRecord::showSeeDoctor()
 					break;
 				}
 
+			cout.width(3);
+			cout << " ||" << endl;
 
-			cout << '\t' << '\t' << (*iter)->insNo << endl;
 			iter++;
 		}
-		cout << endl;
+		cout << "||_______||_________________||________________________________||________________________________||" << endl;
 	}
+	cout << endl;
 	system("pause");
 }
 

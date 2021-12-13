@@ -1,4 +1,5 @@
 #pragma once
+
 #include "Clinic.h"
 #include "Client.h"
 #include "Expenses.h"
@@ -13,5 +14,6 @@ public:
 	~ExpensesRecord();
 	void insertExpenses(Expenses*);
 	void showExpenses();
-	float showSummaryExpenses();
+	int summaryExpenses();
+	void showExpensesReport();
 };
